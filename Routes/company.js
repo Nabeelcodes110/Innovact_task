@@ -1,7 +1,7 @@
 const Router = require('express').Router()
 const Company = require('../Models/Company')
 
-
+//get All company details
 Router.get('/getCompanies' , async(req,res)=>{
     try{
         const companies = await Company.find({}).then(
@@ -15,7 +15,7 @@ Router.get('/getCompanies' , async(req,res)=>{
     
 })
 
-
+//add a new Company
 Router.post('/addCompany' , async (req,res)=>{
     try{
         const newCompany = await Company.create({

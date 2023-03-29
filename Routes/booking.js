@@ -2,7 +2,7 @@ const Router = require('express').Router()
 const bookingModel = require('../Models/Booking')
 
 
-
+//get all booking details
 Router.get('/getBookings' , async (req,res)=>{
     try{
         const bookingDeetails = await bookingModel.find({}).then(
@@ -16,7 +16,7 @@ Router.get('/getBookings' , async (req,res)=>{
    
 })
 
-
+//add new booking
 Router.post('/addBooking' , async (req,res)=>{
     try{
         const newBooking = await bookingModel.create({
@@ -37,6 +37,7 @@ Router.post('/addBooking' , async (req,res)=>{
 
 
 
+//soft delete a booking
 Router.put('/cancelConfirmation/:bookingId' , async(req,res)=>{
     try{
         const booking = await bookingModel.findOneAndUpdate({_id : req.params.bookingId} , {confirmation : false}).then(
@@ -50,7 +51,7 @@ Router.put('/cancelConfirmation/:bookingId' , async(req,res)=>{
 })
 
 
-
+//update booking details
 Router.put('/updateBooking/:bookingId' , async (req,res)=>{
     try{
 

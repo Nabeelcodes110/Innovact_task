@@ -11,7 +11,7 @@ const carSchema  = new Schema({
         required: true
     },
     car_company : {
-        type : Schema.Types.String,
+        type : Schema.Types.String,      //foreign key for company details
         ref : 'Company',
         required : true
     },

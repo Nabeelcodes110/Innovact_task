@@ -1,7 +1,7 @@
 const Router = require('express').Router()
 const Car = require('../Models/Car')
 
-
+//get car details
 Router.get('/getCars' , async(req,res)=>{
     try{
         const cars = await Car.find({}).then(
@@ -15,6 +15,7 @@ Router.get('/getCars' , async(req,res)=>{
     
 })
 
+//add a new Car
 Router.post('/addCar' , async (req,res)=>{
     try{
         const newCar = await Car.create({

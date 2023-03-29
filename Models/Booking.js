@@ -10,12 +10,15 @@ const bookingSchema  = new Schema({
         type : String,
         required : true
     },
+    //foreign key for car details
     car_model : {
         type : Schema.Types.String,
         ref : 'Car',
         required : true
 
     },
+
+    //foreign key for company details
     company : {
         type : Schema.Types.String, 
         ref : 'Company',
